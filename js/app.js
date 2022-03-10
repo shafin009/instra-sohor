@@ -28,7 +28,7 @@ const reportPost = (id) => {
 
 const displayContent = (text) => {
 
-  return text.length < 30 ? 'text' : text.slice(0, 30) + "<span class='fw-bold'>...read more</span>";
+  return text.length < 30 ? 'text' : text.slice(0, 30) + "<span class='fw-bold'>... read more</span>";
 };
 
 
@@ -54,9 +54,19 @@ const switchTab = (id) => {
 };
 
 const createPost = (post) => {
+
   const image = post.image;
   const div = document.createElement("article");
   div.classList.add("post");
+
+  let description;
+
+  if (post.description.length > 30) {
+    description = post.description.slice(0, 30) + '...read more';
+  } else {
+    description = post.description;
+  }
+
   div.innerHTML = `
               <div class="post__header">
                 <div class="post__profile">
@@ -103,7 +113,7 @@ const createPost = (post) => {
                   </button>
                 </div>
 
-                <div class="post__content">${post.description}</div>
+                <div class="post__content">${description}</div>
 
                 <div class="post__infos">
                   <div class="post__likes">
