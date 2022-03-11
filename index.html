@@ -106,11 +106,12 @@
                 </h2>
                 <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree"
                     data-bs-parent="#accordionFlushExample">
-                    <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate
-                        the ss. This is the third item's accordion body. Nothing more
-                        exciting happening here in terms of content, but just filling up the space to make it look, at
-                        least at first glance, a bit more representative of how this would look in a real-world
-                        application.</div>
+                    <div class="accordion-body">Local storage এ data স্থায়ীভাবে থাকে। Session storage এ data সাময়িকভাবে থাকে।
+                        Local storage ও Session storage থেকে কোনো নির্দিষ্ট মান return করা হয়  getItem() ব্যবহার করে।
+                        storage.setItem(KeyName,KeyValue) ব্যবহার করে Local storage এবং Session storage এ মান সেট করা হয়।
+                        Local storage ও Session storage এর object নিয়ে কাজ করতে হলে সেটাকে প্রথমে JSON.parse() করতে হবে।
+                        Local storage ও Session storage এ কোনো object সেট করার আগে JSON.stringify() করতে হবে।
+                        Browser কে বন্ধ করে দিলে Session storage এর সব data মুছে যাবে কিন্তু Local storage এর data মুছে যাবে না।</div>
                 </div>
             </div>
         </div>
